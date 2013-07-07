@@ -1,5 +1,13 @@
+---
 bundler_args: --without integration
 script: bundle exec strainer test
 language: ruby
 rvm:
-  - 1.9.3
+- 1.9.3
+notifications:
+  hipchat:
+    secure: ! 'ENaaNDSeKS0K0IkDEysulJKYkC1fuvPTpXzXuyLY99dt2cSrd7KDAGFZJiKe
+
+      WwxU6UMsutfQzWb4mLdRbLHiqw5LVs5pM0SDfXnuNjyzUphfPsFBHUWaw5Oa
+
+      AxPoVr7Nix1blV3chsj2thoLAhrlVKscZApr1QmUU8aYkSs12MA='
