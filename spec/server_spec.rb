@@ -1,10 +1,8 @@
 require_relative 'spec_helper'
 
 describe 'icinga::server' do
-  let(:chef_run) { prepare_chef_run }
-
   it 'should override attributes, and then call the nagios cookbook, tricking it into installing Icinga' do
-    chef_run.node.set['nagios']['server']['install_method'] = 'package'
+    chef_run = prepare_chef_run
     chef_run.converge 'icinga::server'
 
     expect(chef_run).to include_recipe "nagios::server"
@@ -17,6 +15,7 @@ describe 'icinga::server' do
   end
 
   it 'should do the trick with source install as well' do
+    chef_run = prepare_chef_run
     chef_run.node.set['nagios']['server']['install_method'] = 'source'
     chef_run.converge 'icinga::server'
 

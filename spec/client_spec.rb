@@ -4,7 +4,6 @@ describe 'icinga::client' do
   let(:chef_run) { prepare_chef_run }
 
   it 'should just call out to nagios::client' do
-    chef_run.node.set['nagios']['client']['install_method'] = 'package'
     chef_run.converge 'icinga::client'
 
     expect(chef_run).to include_recipe "nagios::client"
