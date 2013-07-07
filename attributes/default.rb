@@ -1,0 +1,4 @@
+# Icinga Attributes
+# ============================
+
+# default["icinga"][...] = ...
