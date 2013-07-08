@@ -1,3 +1,35 @@
+apt_repository "backports" do
+  uri "http://backports.debian.org/debian-backports"
+  distribution "#{node['lsb']['codename']}-backports"
+  components ["main"]
+  action :add
+  only_if { node['platform'] == 'debian' and
+    node['lsb']['codename'] == 'squeeze' and
+    node['nagios']['server']['install_method'] == 'package' }
+end
+
+apt_repository "debmon" do
+  uri "http://debmon.org/debmon"
+  distribution "debmon-#{node['lsb']['codename']}"
+  components ["main"]
+  keyserver "keys.gnupg.net"
+  key "29D662D2"
+  action :add
+  only_if { node['platform'] == 'debian' and
+    node['nagios']['server']['install_method'] == 'package' }
+end
+
+apt_repository "icinga" do
+  uri "http://ppa.launchpad.net/formorer/icinga/ubuntu"
+  distribution node['lsb']['codename']
+  components ["main"]
+  keyserver "keyserver.ubuntu.com"
+  key "36862847"
+  action :add
+  only_if { node['platform'] == 'ubuntu' and
+    node['nagios']['server']['install_method'] == 'package' }
+end
+
 include_recipe 'nagios::server'
 
 chef_gem 'chef-rewind'

@@ -6,4 +6,5 @@ description      "Icinga"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
-depends 'nagios', '>= 4.1.4'
+depends 'apt'
+depends 'nagios', '>= 4.1.5'
