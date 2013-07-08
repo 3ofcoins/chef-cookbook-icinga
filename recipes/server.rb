@@ -23,7 +23,3 @@ begin
 rescue Chef::Exceptions::ResourceNotFound
   # Seems we're trying to install from source
 end
-
-version = node['nagios']['server']['version']
-puts "source file: #{Chef::Config[:file_cache_path]}/#{node['nagios']['server']['name']}-#{version}.tar.gz"
-puts "source url: #{node['nagios']['server']['url']}/#{node['nagios']['server']['name']}-#{version}.tar.gz"
