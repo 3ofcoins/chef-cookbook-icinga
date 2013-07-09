@@ -9,7 +9,6 @@
 .vagrant
 /cookbooks
 Berksfile.lock
-Gemfile.lock
 \#*#
 bin/*
 metadata.json
