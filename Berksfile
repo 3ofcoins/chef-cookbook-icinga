@@ -8,6 +8,6 @@ cookbook 'nagios',
          branch: 'COOK-3287'
 
 group :integration do
-  cookbook "minitest-handler"
-  cookbook "icinga-test", :path => "./test/cookbooks/icinga-test"
+  cookbook "chef-solo-search", github: 'edelight/chef-solo-search'
+  cookbook "icinga-test-helper", :path => "./test/cookbooks/icinga-test-helper"
 end
