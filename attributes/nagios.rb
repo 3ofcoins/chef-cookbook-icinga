@@ -13,6 +13,8 @@ default['nagios']['server']['version'] = '1.9.2'
 default['nagios']['server']['checksum'] = 'ad9b983917e1dfab8a59c1873c71842fd3ddb38921bec9207456d47f1cb2f3a7'
 default['nagios']['server']['src_dir'] = 'icinga-1.9.2'
 
+default['nagios']['pagerduty']['script_url'] = 'https://raw.github.com/PagerDuty/pagerduty-icinga-pl/master/pagerduty_icinga.pl'
+
 default['nagios']['home']       = '/usr/lib/icinga'
 default['nagios']['conf_dir']   = '/etc/icinga'
 default['nagios']['config_dir'] = '/etc/icinga/objects'
