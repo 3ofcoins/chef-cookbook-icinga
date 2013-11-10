@@ -5,17 +5,12 @@ This cookbook overrides attributes and modifies some resources of
 [Opscode's `nagios` cookbook](http://community.opscode.com/cookbooks/nagios)
 to make it install and configure Icinga instead.
 
-**ATTENTION:** This cookbook needs bleeding edge Git master branch of
-the `nagios` cookbook, as it needs attributes and customization points
-not yet released to the community portal. You can get the cookbook at
-https://github.com/opscode-cookbooks/nagios/
-
 This cookbook's home is at https://github.com/3ofcoins/chef-cookbook-icinga/
 
 Requirements
 ------------
 
- * nagios
+ * nagios >= 5.0.0
  * apt
 
 Usage
