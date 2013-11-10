@@ -10,4 +10,4 @@ supports 'debian', '>= 6.0'
 supports 'ubuntu', '>= 10.4'
 
 depends 'apt'
-depends 'nagios', '>= 4.1.5'
+depends 'nagios', '>= 5.0.0'
