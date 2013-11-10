@@ -10,6 +10,7 @@ gem 'strainer'
 gem 'chef-rewind'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.0.0.beta.2'
+  gem 'test-kitchen', '~> 1.0.0.beta.3'
   gem 'kitchen-vagrant'
+#  gem 'chef-zero'
 end
