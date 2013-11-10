@@ -1,31 +1,39 @@
 ---
-driver_plugin: vagrant
+#driver_plugin: vagrant
+driver_plugin: lxc
 driver_config:
-  require_chef_omnibus: true
+  require_chef_omnibus: false
 
 platforms:
-- name: ubuntu-13.04
+- name: ubuntu_1204
   driver_config:
-    box: opscode-ubuntu-13.04
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box
-- name: ubuntu-12.04
+    base_container: ubuntu_1204 # your base container name
+    username: ubuntu # defaults to "root"
+    password: ubuntu # defaults to "root"
+- name: ubuntu_1304
   driver_config:
-    box: opscode-ubuntu-12.04
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
+    base_container: ubuntu_1304
+    username: ubuntu
+    password: ubuntu
+## Needs a fix for dhclient not sending hostname to dnsmasq
+#- name: debian-6
+#  driver_config:
+#    base_container: debian_6
+#    username: kitchen
+#    password: kitchen
 - name: ubuntu-10.04
   driver_config:
-    box: opscode-ubuntu-10.04
-    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box
+    base_container: ubuntu_1004
+    username: ubuntu
+    password: ubuntu
+
 ## Waiting for http://tickets.opscode.com/browse/CHEF-4125
+## Needs to be created yet
 #- name: debian-7.1.0
 #  driver_config:
-#    box: opscode-debian-7.1.0
-#    box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-7.1.0_provisionerless.box
-- name: debian-6
-  driver_config:
-    box: puppetlabs-debian-6
-    box_url: http://puppet-vagrant-boxes.puppetlabs.com/debian-607-x64-vbox4210-nocm.box
-
+#    base_container: debian_71
+#    username: kitchen
+#    password: kitchen
 suites:
 - name: server
   run_list:
