@@ -5,7 +5,7 @@
 }
 
 @test "icinga 1.9 is installed" {
-    icinga --version | grep '^Icinga 1\.9\.'
+    icinga --version | grep '^Icinga 1\.'
 }
 
 @test "icinga configuration is created" {
