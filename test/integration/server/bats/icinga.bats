@@ -5,7 +5,7 @@
 }
 
 @test "icinga 1.9 or newer is installed" {
-    icinga --version | awk -F '.' '{if($1>=1 && $2>=9 ){exit 0;}{exit 1;}}'
+    icinga --version | awk -F '.' '{  exit ($1==1 && $2>=9) ? 0 : 1; }'
 }
 
 @test "icinga configuration is created" {
