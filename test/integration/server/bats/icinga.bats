@@ -4,8 +4,8 @@
     [ ! -f /usr/sbin/nagios3 ]
 }
 
-@test "icinga 1.9 is installed" {
-    icinga --version | grep '^Icinga 1\.9\.'
+@test "icinga 1.9 or newer is installed" {
+    icinga --version | awk '/^Icinga/ { split($2,v,".") ; ok=((v[1]==1)&&(v[2]>=9)) ; exit } END { exit !ok }'
 }
 
 @test "icinga configuration is created" {
